@@ -161,6 +161,7 @@
     <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\MerchandiseModel.cs" />
     <Compile Include="Models\OrderModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -206,15 +207,15 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Admin\index.cshtml" />
-    <Content Include="Views\Home\CartView.cshtml" />
+    <Content Include="Views\Cart\CartView.cshtml" />
     <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Cart\Checkout.cshtml" />
+    <Content Include="Views\Cart\ThankYou.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\img\" />
-    <Folder Include="Views\Cart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

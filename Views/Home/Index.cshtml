@@ -13,21 +13,36 @@
             <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
         </div>
     </div>*@
+    
+
     @foreach (var item in Model)
     {
         <div class="col-xs-12 col-sm-6 col-md-3">
-            <div>
+            <!-- PROD. ITEM -->
+            <div class="span4">
                 <div class="thumbnail">
-                    <img src="@Url.Content("/Content/img/" + item.Productimg)" alt="">
+                    <!-- IMAGE CONTAINER-->
+                    <img src="@Url.Content("/Content/img/" + item.Productimg)" alt="post image">
+                    <!--END IMAGE CONTAINER-->
+                    <!-- CAPTION -->
+                    <div class="caption">
+                        <h3 class=""><a href="Home/Details/@(item.Id)">@item.Name</a></h3>
+                        <p class="">@item.Dscription</p>
+
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <p class="lead">@item.Price Kr</p>
+                            </div>
+                            <div class="span6">
+                                <a class="btn btn-success btn-block add" href="#" data-set="@(item.Id)">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END CAPTION -->
                 </div>
-                <h3>@item.Name</h3>
-                @*<p>
-                    @item.Dscription
-                </p>*@
-                <div>
-                    @item.Price Kr@*<a href="/home/addtocart/@(item.Id)">*@<button type="button" name="Add to Cart" class="btn btn-primary add" data-set="@(item.Id)">Add To Cart</button>@*</a>*@
-                </div>
+                <!-- END: THUMBNAIL -->
             </div>
+            <!-- PROD. ITEM -->
         </div>
     }
 

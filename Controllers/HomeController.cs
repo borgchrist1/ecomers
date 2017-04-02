@@ -44,51 +44,9 @@ namespace webshop.Controllers
             return View(item);
         }
 
-        public ActionResult CartView ()
-        {
-            return View();
-        }
+      
 
-        [HttpGet]
-        public ActionResult AddToCart(int id)
-        {
-            
-            var cart = new List<CartModel>();
-            using (var connection = new SqlConnection(this.connectionString))
-            {
-                var query = "SELECT * FROM merchandise WHERE Id = @Id";
-                var item = connection.QueryFirstOrDefault<MerchandiseModel>(query, new { id });
-                var cartItem = new CartModel
-                {
-                    Merchandise_id = id, Product = item, count = 1
-                };
-                if (this.Session["cart"] != null)
-                    cart = this.Session["cart"] as List<CartModel>;
-
-                cart.Add(cartItem);
-                this.Session["cart"] = cart;
-                //string bCart = JsonConvert.SerializeObject(nCart);
-                //var bb = new List<CartModel>();
-                //var nn = JsonConvert.DeserializeObject(bCart);
-                return Json(cartItem, JsonRequestBehavior.AllowGet);
-            }
-
-            
-            
-
-        }
-
-        public ActionResult GetCart ()
-        {
-
-            return Json(this.Session["cart"], JsonRequestBehavior.AllowGet);
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+        
+        
     }
 }

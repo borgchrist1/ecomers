@@ -8,7 +8,6 @@ namespace webshop.Models
     public class OrderModel
     {
         public int Id { get; set; }
-        public string Products { get; set; }
-        public int OrderNumber { get; set; }
+        public int Cart_id { get; set; }
     }
 }
